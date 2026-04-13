@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "logistics-ai-mcp"
+version = "1.0.0"
+description = "Supply chain and shipping tools - shipment tracking, route optimization, warehouse inventory, delivery ETA, customs docs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "MEOK AI Labs", email = "hello@meok.ai" },
+]
+keywords = ["mcp", "ai", "tools", "logistics"]
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+logistics-ai-mcp = "server:mcp.run"
