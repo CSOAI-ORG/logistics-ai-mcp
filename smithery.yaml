@@ -1,0 +1,10 @@
+name: logistics-ai-mcp
+description: "MEOK AI Labs — Supply chain and shipping tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/logistics-ai-mcp
+license: MIT
+categories: [Logistics, Business]
+tags: [logistics, supply-chain, shipping, freight, route-optimization]
+runtime: python
+entrypoint: server.py

@@ -5,17 +5,25 @@ build-backend = "hatchling.build"
 [project]
 name = "logistics-ai-mcp"
 version = "1.0.0"
-description = "Supply chain and shipping tools - shipment tracking, route optimization, warehouse inventory, delivery ETA, customs docs"
+description = "MEOK AI Labs — Supply chain and shipping tools powered by MEOK AI Labs."
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [
-    { name = "MEOK AI Labs", email = "hello@meok.ai" },
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "logistics", "supply-chain", "shipping", "freight", "route-optimization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
 ]
-keywords = ["mcp", "ai", "tools", "logistics"]
 dependencies = [
     "mcp>=1.0.0",
 ]
 
-[project.scripts]
-logistics-ai-mcp = "server:mcp.run"
+[project.urls]
+Homepage = "https://meok.ai"
+Repository = "https://github.com/CSOAI-ORG/logistics-ai-mcp"
+Documentation = "https://meok.ai/docs/logistics-ai-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/logistics-ai-mcp/issues"
