@@ -1,10 +1,83 @@
 name: logistics-ai-mcp
-description: "MEOK AI Labs — Supply chain and shipping tools powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/logistics-ai-mcp
-license: MIT
-categories: [Logistics, Business]
-tags: [logistics, supply-chain, shipping, freight, route-optimization]
-runtime: python
-entrypoint: server.py
+description: '> Supply chain and shipping tools - shipment tracking, route optimization,
+  warehouse inventory, delivery ETA, customs docs'
+version: 1.0.0
+tools:
+- name: track_shipment
+  description: Track a shipment and get current status with location updates.
+  parameters:
+  - name: tracking_id
+    type: string
+    required: true
+  - name: carrier
+    type: string
+    required: false
+- name: optimize_route
+  description: Optimize shipping route between two locations with cost and time estimates.
+  parameters:
+  - name: origin
+    type: string
+    required: true
+  - name: destination
+    type: string
+    required: true
+  - name: weight_kg
+    type: number
+    required: false
+  - name: transport_modes
+    type: string
+    required: false
+  - name: priority
+    type: string
+    required: false
+- name: warehouse_inventory
+  description: Manage warehouse inventory with stock levels, reorder alerts, and valuation.
+  parameters:
+  - name: items
+    type: array
+    required: true
+  - name: operation
+    type: string
+    required: false
+- name: estimate_delivery
+  description: Estimate delivery date and time windows for a shipment.
+  parameters:
+  - name: origin
+    type: string
+    required: true
+  - name: destination
+    type: string
+    required: true
+  - name: transport_mode
+    type: string
+    required: false
+  - name: ship_date
+    type: string
+    required: false
+  - name: priority
+    type: string
+    required: false
+- name: customs_documentation
+  description: Generate customs documentation requirements and duty estimates.
+  parameters:
+  - name: origin_country
+    type: string
+    required: true
+  - name: destination_country
+    type: string
+    required: true
+  - name: goods_description
+    type: string
+    required: true
+  - name: declared_value
+    type: number
+    required: true
+  - name: currency
+    type: string
+    required: false
+  - name: weight_kg
+    type: number
+    required: false
+  - name: hs_code
+    type: string
+    required: false

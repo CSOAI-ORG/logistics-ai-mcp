@@ -1,24 +1,138 @@
 {
   "name": "logistics-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Supply chain and shipping tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/logistics-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> Supply chain and shipping tools - shipment tracking, route optimization, warehouse inventory, delivery ETA, customs docs",
+  "version": "1.0.0",
   "tools": [
-    "track_shipment",
-    "optimize_route",
-    "warehouse_inventory",
-    "estimate_delivery",
-    "customs_documentation"
-  ],
-  "categories": [
-    "Logistics",
-    "Business"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "track_shipment",
+      "description": "Track a shipment and get current status with location updates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tracking_id": {
+            "type": "string"
+          },
+          "carrier": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "tracking_id"
+        ]
+      }
+    },
+    {
+      "name": "optimize_route",
+      "description": "Optimize shipping route between two locations with cost and time estimates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          },
+          "weight_kg": {
+            "type": "number"
+          },
+          "transport_modes": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination"
+        ]
+      }
+    },
+    {
+      "name": "warehouse_inventory",
+      "description": "Manage warehouse inventory with stock levels, reorder alerts, and valuation.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "operation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      }
+    },
+    {
+      "name": "estimate_delivery",
+      "description": "Estimate delivery date and time windows for a shipment.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          },
+          "transport_mode": {
+            "type": "string"
+          },
+          "ship_date": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination"
+        ]
+      }
+    },
+    {
+      "name": "customs_documentation",
+      "description": "Generate customs documentation requirements and duty estimates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "origin_country": {
+            "type": "string"
+          },
+          "destination_country": {
+            "type": "string"
+          },
+          "goods_description": {
+            "type": "string"
+          },
+          "declared_value": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "weight_kg": {
+            "type": "number"
+          },
+          "hs_code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin_country",
+          "destination_country",
+          "goods_description",
+          "declared_value"
+        ]
+      }
+    }
+  ]
 }

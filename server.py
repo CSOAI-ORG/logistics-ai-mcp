@@ -3,6 +3,11 @@ Logistics AI MCP Server
 Supply chain and shipping tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 import math
 import hashlib
@@ -53,13 +58,17 @@ def _haversine(lat1, lon1, lat2, lon2):
 @mcp.tool()
 def track_shipment(
     tracking_id: str,
-    carrier: str = "auto") -> dict:
+    carrier: str = "auto", api_key: str = "") -> dict:
     """Track a shipment and get current status with location updates.
 
     Args:
         tracking_id: Shipment tracking ID/number
         carrier: Carrier name or 'auto' for auto-detection
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("track_shipment")
 
     # Deterministic simulation based on tracking ID
@@ -105,7 +114,7 @@ def optimize_route(
     destination: str,
     weight_kg: float = 10.0,
     transport_modes: list[str] | None = None,
-    priority: str = "balanced") -> dict:
+    priority: str = "balanced", api_key: str = "") -> dict:
     """Optimize shipping route between two locations with cost and time estimates.
 
     Args:
@@ -115,6 +124,10 @@ def optimize_route(
         transport_modes: Modes to consider: air, sea, road, rail (default: all)
         priority: Optimization priority: cost, speed, balanced
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("optimize_route")
 
     transport_modes = transport_modes or ["air", "sea", "road", "rail"]
@@ -177,13 +190,17 @@ def optimize_route(
 @mcp.tool()
 def warehouse_inventory(
     items: list[dict],
-    operation: str = "status") -> dict:
+    operation: str = "status", api_key: str = "") -> dict:
     """Manage warehouse inventory with stock levels, reorder alerts, and valuation.
 
     Args:
         items: List of dicts with keys: sku, name, quantity, unit_cost, reorder_point (optional), max_stock (optional)
         operation: Operation type: status, reorder_check, valuation
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("warehouse_inventory")
 
     total_value = 0.0
@@ -246,7 +263,7 @@ def estimate_delivery(
     destination: str,
     transport_mode: str = "road",
     ship_date: str = "",
-    priority: str = "standard") -> dict:
+    priority: str = "standard", api_key: str = "") -> dict:
     """Estimate delivery date and time windows for a shipment.
 
     Args:
@@ -256,6 +273,10 @@ def estimate_delivery(
         ship_date: Ship date YYYY-MM-DD (default: today)
         priority: Service level: express, standard, economy
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("estimate_delivery")
 
     origin_key = origin.lower().replace(" ", "_")
@@ -321,7 +342,7 @@ def customs_documentation(
     declared_value: float,
     currency: str = "USD",
     weight_kg: float = 1.0,
-    hs_code: str = "") -> dict:
+    hs_code: str = "", api_key: str = "") -> dict:
     """Generate customs documentation requirements and duty estimates.
 
     Args:
@@ -333,6 +354,10 @@ def customs_documentation(
         weight_kg: Total weight in kg
         hs_code: Harmonized System code (if known)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("customs_documentation")
 
     origin = origin_country.upper()
