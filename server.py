@@ -53,8 +53,7 @@ def _haversine(lat1, lon1, lat2, lon2):
 @mcp.tool()
 def track_shipment(
     tracking_id: str,
-    carrier: str = "auto",
-) -> dict:
+    carrier: str = "auto") -> dict:
     """Track a shipment and get current status with location updates.
 
     Args:
@@ -106,8 +105,7 @@ def optimize_route(
     destination: str,
     weight_kg: float = 10.0,
     transport_modes: list[str] | None = None,
-    priority: str = "balanced",
-) -> dict:
+    priority: str = "balanced") -> dict:
     """Optimize shipping route between two locations with cost and time estimates.
 
     Args:
@@ -179,8 +177,7 @@ def optimize_route(
 @mcp.tool()
 def warehouse_inventory(
     items: list[dict],
-    operation: str = "status",
-) -> dict:
+    operation: str = "status") -> dict:
     """Manage warehouse inventory with stock levels, reorder alerts, and valuation.
 
     Args:
@@ -249,8 +246,7 @@ def estimate_delivery(
     destination: str,
     transport_mode: str = "road",
     ship_date: str = "",
-    priority: str = "standard",
-) -> dict:
+    priority: str = "standard") -> dict:
     """Estimate delivery date and time windows for a shipment.
 
     Args:
@@ -325,8 +321,7 @@ def customs_documentation(
     declared_value: float,
     currency: str = "USD",
     weight_kg: float = 1.0,
-    hs_code: str = "",
-) -> dict:
+    hs_code: str = "") -> dict:
     """Generate customs documentation requirements and duty estimates.
 
     Args:
