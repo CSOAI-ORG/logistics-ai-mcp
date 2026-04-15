@@ -1,6 +1,6 @@
 {
   "name": "logistics-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "AI-powered logistics ai MCP server for agents. Supports track shipment, optimize route, warehouse inventory. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {

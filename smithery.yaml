@@ -1,5 +1,6 @@
 name: logistics-ai-mcp
-description: MEOK AI Labs MCP Server
+description: AI-powered logistics ai MCP server for agents. Supports track shipment,
+  optimize route, warehouse inventory. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: track_shipment
