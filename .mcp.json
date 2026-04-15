@@ -1,6 +1,6 @@
 {
   "name": "logistics-ai-mcp",
-  "description": "> Supply chain and shipping tools - shipment tracking, route optimization, warehouse inventory, delivery ETA, customs docs",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
@@ -37,7 +37,7 @@
             "type": "number"
           },
           "transport_modes": {
-            "type": "string"
+            "type": "array"
           },
           "priority": {
             "type": "string"
@@ -56,10 +56,7 @@
         "type": "object",
         "properties": {
           "items": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "operation": {
             "type": "string"

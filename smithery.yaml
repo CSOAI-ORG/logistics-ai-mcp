@@ -1,6 +1,5 @@
 name: logistics-ai-mcp
-description: '> Supply chain and shipping tools - shipment tracking, route optimization,
-  warehouse inventory, delivery ETA, customs docs'
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: track_shipment
@@ -25,7 +24,7 @@ tools:
     type: number
     required: false
   - name: transport_modes
-    type: string
+    type: array
     required: false
   - name: priority
     type: string
