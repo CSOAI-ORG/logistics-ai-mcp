@@ -1,0 +1,57 @@
+{
+  "name": "logistics-ai",
+  "description": "Logistics Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/logistics-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "track_shipment",
+      "description": "Track a shipment and get current status with location updates."
+    },
+    {
+      "name": "optimize_route",
+      "description": "Optimize shipping route between two locations with cost and time estimates."
+    },
+    {
+      "name": "warehouse_inventory",
+      "description": "Manage warehouse inventory with stock levels, reorder alerts, and valuation."
+    },
+    {
+      "name": "estimate_delivery",
+      "description": "Estimate delivery date and time windows for a shipment."
+    },
+    {
+      "name": "customs_documentation",
+      "description": "Generate customs documentation requirements and duty estimates."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Travel & Logistics"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
