@@ -1,3 +1,5 @@
+[![logistics-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/logistics-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/logistics-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/logistics-ai-mcp)](https://github.com/CSOAI-ORG/logistics-ai-mcp/stargazers)
