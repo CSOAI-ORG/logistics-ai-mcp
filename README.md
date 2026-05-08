@@ -6,40 +6,53 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/logistics-ai-mcp)](https://github.com/CSOAI-ORG/logistics-ai-mcp/stargazers)
+# Logistics Ai MCP
 
-# ulogisticsU aiU mcp
+**Logistics AI MCP Server**
 
-****
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/logistics-ai-mcp)](https://www.npmjs.com/package/@meok-ai/logistics-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-logistics-ai-mcp)](https://pypi.org/project/meok-logistics-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/logistics-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Logistics AI MCP Server
+Supply chain and shipping tools powered by MEOK AI Labs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `track_shipment` | Track a shipment and get current status with location updates. |
+| `optimize_route` | Optimize shipping route between two locations with cost and time estimates. |
+| `warehouse_inventory` | Manage warehouse inventory with stock levels, reorder alerts, and valuation. |
+| `estimate_delivery` | Estimate delivery date and time windows for a shipment. |
+| `customs_documentation` | Generate customs documentation requirements and duty estimates. |
 
 ## Installation
 
 ```bash
-pip install logistics-ai-mcp
-# or
-npm install -g @meok-ai/logistics-ai-mcp
+pip install meok-logistics-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config:
 
-## Enterprise Support
-
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+```json
+{
+  "mcpServers": {
+    "logistics-ai": {
+      "command": "python",
+      "args": ["-m", "meok_logistics_ai_mcp.server"]
+    }
+  }
+}
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
+MIT © [MEOK AI Labs](https://meok.ai)
 <!-- mcp-name: io.github.CSOAI-ORG/logistics-ai-mcp -->
