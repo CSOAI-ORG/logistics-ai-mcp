@@ -1,0 +1,9 @@
+# logistics-ai-mcp - Auto-trigger Rules
+
+When the user asks about logistics, use logistics-ai-mcp tools: track_shipment, optimize_route, warehouse_inventory, estimate_delivery, customs_documentation
+
+Supply chain and shipping tools powered by MEOK AI Labs.
+
+Install: `pip install logistics-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
