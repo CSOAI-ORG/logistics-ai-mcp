@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "logistics-ai-mcp",
+    "description": "Logistics Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "logistics-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "track_shipment",
+      "optimize_route",
+      "warehouse_inventory",
+      "estimate_delivery",
+      "customs_documentation"
+    ]
+  }
+}

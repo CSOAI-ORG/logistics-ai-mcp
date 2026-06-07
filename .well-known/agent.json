@@ -1,0 +1,68 @@
+{
+  "name": "logistics-ai-mcp",
+  "description": "Logistics Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/logistics-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "track_shipment",
+      "name": "Track Shipment",
+      "description": "track_shipment via logistics-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "optimize_route",
+      "name": "Optimize Route",
+      "description": "optimize_route via logistics-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "warehouse_inventory",
+      "name": "Warehouse Inventory",
+      "description": "warehouse_inventory via logistics-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "estimate_delivery",
+      "name": "Estimate Delivery",
+      "description": "estimate_delivery via logistics-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "customs_documentation",
+      "name": "Customs Documentation",
+      "description": "customs_documentation via logistics-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
